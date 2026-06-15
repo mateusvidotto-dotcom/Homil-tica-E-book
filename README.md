@@ -6,7 +6,7 @@
 
 <title>Guia Completo de Homilética | E-book Gratuito</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,54 +14,129 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
-font-family:'Inter',sans-serif;
-background:#0b0f19;
-color:#fff;
-line-height:1.7;
+font-family:'Poppins',sans-serif;
+background:#0b1120;
+color:white;
+overflow-x:hidden;
 }
 
-h1,h2,h3{
-font-family:'Merriweather',serif;
+/* =======================
+NAVBAR
+======================= */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+z-index:1000;
+background:rgba(11,17,32,.95);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-.container{
-max-width:1200px;
+.nav-container{
+max-width:1300px;
 margin:auto;
-padding:0 25px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
 }
 
-.hero{
-background:linear-gradient(135deg,#0b0f19,#1e293b);
-padding:100px 20px;
-text-align:center;
-}
-
-.hero h1{
-font-size:4rem;
-margin-bottom:20px;
+.logo{
+font-size:1.5rem;
+font-weight:700;
 color:#facc15;
 }
 
-.hero p{
-font-size:1.3rem;
-max-width:800px;
+.nav-btn{
+background:#facc15;
+color:#000;
+padding:12px 24px;
+border-radius:999px;
+text-decoration:none;
+font-weight:bold;
+transition:.3s;
+}
+
+.nav-btn:hover{
+transform:scale(1.05);
+}
+
+/* =======================
+HERO
+======================= */
+
+.hero{
+padding:180px 20px 120px;
+text-align:center;
+background:
+radial-gradient(circle at top,#1e3a8a 0%,#0b1120 55%);
+}
+
+.hero-container{
+max-width:1200px;
 margin:auto;
+}
+
+.hero h1{
+font-family:'Playfair Display',serif;
+font-size:4.5rem;
+color:#facc15;
+margin-bottom:25px;
+line-height:1.2;
+}
+
+.hero p{
+max-width:850px;
+margin:auto;
+font-size:1.3rem;
 color:#cbd5e1;
+}
+
+.book-placeholder{
+width:340px;
+height:480px;
+margin:50px auto;
+border-radius:25px;
+background:linear-gradient(
+135deg,
+#facc15,
+#f59e0b
+);
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:2rem;
+font-weight:bold;
+color:#000;
+box-shadow:0 0 50px rgba(250,204,21,.4);
+animation:float 6s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{
+transform:translateY(0px);
+}
+50%{
+transform:translateY(-20px);
+}
 }
 
 .cta{
 display:inline-block;
-margin-top:40px;
+margin-top:20px;
+padding:20px 40px;
 background:#facc15;
-color:#000;
-padding:18px 40px;
-border-radius:50px;
+color:black;
+font-size:1.2rem;
 font-weight:bold;
 text-decoration:none;
-font-size:1.2rem;
+border-radius:999px;
 transition:.3s;
 }
 
@@ -69,128 +144,261 @@ transition:.3s;
 transform:scale(1.05);
 }
 
-.section{
-padding:90px 20px;
+/* =======================
+SEÇÕES
+======================= */
+
+section{
+padding:100px 20px;
+}
+
+.container{
+max-width:1300px;
+margin:auto;
 }
 
 .section-title{
+font-size:3rem;
+font-family:'Playfair Display',serif;
 text-align:center;
-font-size:2.8rem;
-margin-bottom:60px;
 color:#facc15;
+margin-bottom:60px;
 }
 
 .cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;
 }
 
 .card{
 background:#111827;
-padding:30px;
+padding:35px;
 border-radius:20px;
-border:1px solid rgba(255,255,255,.08);
+transition:.3s;
+border:1px solid rgba(255,255,255,.05);
+}
+
+.card:hover{
+transform:translateY(-10px);
 }
 
 .card h3{
-margin-bottom:15px;
 color:#facc15;
+margin-bottom:15px;
 }
 
-.sumario{
+/* =======================
+SUMÁRIO
+======================= */
+
+.summary{
 background:#111827;
 padding:40px;
-border-radius:20px;
-max-width:1000px;
-margin:auto;
+border-radius:25px;
 }
 
-.sumario ul{
+.summary ul{
 list-style:none;
 }
 
-.sumario li{
-padding:12px 0;
+.summary li{
+padding:16px;
 border-bottom:1px solid rgba(255,255,255,.08);
+font-size:1.05rem;
 }
 
-.cta-final{
-text-align:center;
-background:linear-gradient(135deg,#1e293b,#0b0f19);
-padding:100px 20px;
+/* =======================
+ESTATÍSTICAS
+======================= */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
 }
+
+.stat{
+background:#111827;
+padding:35px;
+text-align:center;
+border-radius:20px;
+}
+
+.stat h3{
+font-size:3rem;
+color:#facc15;
+}
+
+.stat p{
+margin-top:10px;
+}
+
+/* =======================
+FAQ
+======================= */
+
+.faq{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.faq-item{
+background:#111827;
+padding:25px;
+border-radius:20px;
+}
+
+.faq-item h3{
+color:#facc15;
+margin-bottom:10px;
+}
+
+/* =======================
+CTA FINAL
+======================= */
+
+.final{
+text-align:center;
+background:
+linear-gradient(
+135deg,
+#1e293b,
+#0b1120
+);
+}
+
+.final h2{
+font-size:3rem;
+margin-bottom:25px;
+}
+
+/* =======================
+FOOTER
+======================= */
 
 footer{
-padding:30px;
+padding:40px;
 text-align:center;
-background:#05070c;
+background:#030712;
 color:#94a3b8;
+}
+
+/* =======================
+RESPONSIVO
+======================= */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.8rem;
+}
+
+.section-title{
+font-size:2rem;
+}
+
+.book-placeholder{
+width:260px;
+height:380px;
+font-size:1.5rem;
+}
+
 }
 
 </style>
 </head>
-
 <body>
 
-<section class="hero">
+<!-- NAVBAR -->
 
-<div class="container">
+<nav>
 
-<h1>GUIA COMPLETO DE HOMILÉTICA</h1>
+<div class="nav-container">
 
-<p>
-A arte de pregar a Palavra de Deus com fidelidade bíblica,
-clareza teológica e relevância para o mundo contemporâneo.
-</p>
+<div class="logo">
+📖 Guia Completo de Homilética
+</div>
 
-<p style="margin-top:15px;">
-E-book Gratuito • Formação para Pregadores • Teologia • Exegese • Comunicação
-</p>
-
-<a href="ebook-homiletica.pdf" class="cta">
-📖 BAIXAR GRATUITAMENTE
+<a
+href="E-BOOK Guia completo de homilética - a arte de pregar a palavra de Deus (3).pdf"
+download
+class="nav-btn">
+Baixar Grátis
 </a>
 
 </div>
 
-</section>
+</nav>
 
-<section class="section">
+<!-- HERO -->
+
+<header class="hero">
+
+<div class="hero-container">
+
+<h1>
+GUIA COMPLETO DE HOMILÉTICA
+</h1>
+
+<p>
+A Arte de Pregar a Palavra de Deus com Fidelidade Bíblica,
+Profundidade Teológica e Relevância para o Século XXI.
+</p>
+
+<div class="book-placeholder">
+CAPA DO E-BOOK
+</div>
+
+<a
+href="E-BOOK Guia completo de homilética - a arte de pregar a palavra de Deus (3).pdf"
+download
+class="cta">
+📥 BAIXAR EBOOK GRATUITO
+</a>
+
+</div>
+
+</header>
+
+<!-- BENEFÍCIOS -->
+
+<section>
 
 <div class="container">
 
 <h2 class="section-title">
-Por que ler este e-book?
+O Que Você Vai Aprender?
 </h2>
 
 <div class="cards">
 
 <div class="card">
-<h3>📖 Base Bíblica</h3>
+<h3>📖 Teologia da Pregação</h3>
 <p>
-Aprenda a interpretar corretamente as Escrituras antes de pregá-las.
+Compreenda o fundamento bíblico da proclamação da Palavra.
 </p>
 </div>
 
 <div class="card">
-<h3>🎤 Comunicação</h3>
+<h3>🎤 Estrutura de Sermões</h3>
 <p>
-Desenvolva sermões claros, impactantes e relevantes.
+Aprenda a construir mensagens claras, bíblicas e impactantes.
 </p>
 </div>
 
 <div class="card">
-<h3>🧠 Exegese</h3>
+<h3>📚 Exegese</h3>
 <p>
-Transforme o texto bíblico em princípios teológicos aplicáveis.
+Extraia corretamente o significado do texto bíblico.
 </p>
 </div>
 
 <div class="card">
-<h3>🔥 Poder Espiritual</h3>
+<h3>🔥 Aplicação Prática</h3>
 <p>
-Entenda o papel do Espírito Santo na pregação fiel.
+Transforme interpretação em transformação espiritual.
 </p>
 </div>
 
@@ -200,7 +408,47 @@ Entenda o papel do Espírito Santo na pregação fiel.
 
 </section>
 
-<section class="section">
+<!-- ESTATÍSTICAS -->
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">
+Sobre o E-book
+</h2>
+
+<div class="stats">
+
+<div class="stat">
+<h3>190+</h3>
+<p>Páginas</p>
+</div>
+
+<div class="stat">
+<h3>12</h3>
+<p>Capítulos</p>
+</div>
+
+<div class="stat">
+<h3>100%</h3>
+<p>Gratuito</p>
+</div>
+
+<div class="stat">
+<h3>∞</h3>
+<p>Conhecimento Bíblico</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SUMÁRIO -->
+
+<section>
 
 <div class="container">
 
@@ -208,29 +456,29 @@ Entenda o papel do Espírito Santo na pregação fiel.
 Sumário Completo
 </h2>
 
-<div class="sumario">
+<div class="summary">
 
 <ul>
 
-<li><strong>Introdução:</strong> Por que a Pregação Ainda Importa no Século XXI</li>
+<li>Introdução: Por que a Pregação Ainda Importa no Século XXI</li>
 
-<li><strong>Capítulo 1:</strong> A Teologia da Pregação – Pregando como Mordomos da Palavra</li>
+<li>Capítulo 1: A Teologia da Pregação – Pregando como Mordomos da Palavra</li>
 
-<li><strong>Capítulo 2:</strong> A História da Homilética – Da Igreja Primitiva aos Pregadores Reformados Contemporâneos</li>
+<li>Capítulo 2: A História da Homilética – Da Igreja Primitiva aos Pregadores Reformados Contemporâneos</li>
 
-<li><strong>Capítulo 3:</strong> Tipos de Pregação – Expositiva, Textual, Temática, Narrativa e Biográfica</li>
+<li>Capítulo 3: Tipos de Pregação – Expositiva, Textual, Temática, Narrativa e Biográfica</li>
 
-<li><strong>Capítulo 4:</strong> A Preparação Espiritual e Moral do Pregador</li>
+<li>Capítulo 4: A Preparação Espiritual e Moral do Pregador</li>
 
-<li><strong>Capítulo 5:</strong> Exegese para Pregação – Do Texto ao Princípio Teológico</li>
+<li>Capítulo 5: Exegese para Pregação – Do Texto ao Princípio Teológico</li>
 
-<li><strong>Capítulo 6:</strong> Estrutura do Sermão – Construindo Sermões que Transformam Vidas</li>
+<li>Capítulo 6: Estrutura do Sermão – Construindo Sermões que Transformam Vidas</li>
 
-<li><strong>Capítulo 7:</strong> Introdução, Corpo, Aplicação e Conclusão</li>
+<li>Capítulo 7: Introdução, Corpo, Aplicação e Conclusão</li>
 
-<li><strong>Capítulo 8:</strong> Ilustrações, Storytelling e Figuras de Linguagem na Pregação</li>
+<li>Capítulo 8: Ilustrações, Storytelling e Figuras de Linguagem</li>
 
-<li><strong>Capítulo 9:</strong> Pregação Contextualizada</li>
+<li>Capítulo 9: Pregação Contextualizada</li>
 
 <li>9.1 Pregando para Jovens e Adolescentes</li>
 
@@ -244,13 +492,13 @@ Sumário Completo
 
 <li>9.6 Pregando para Ateus, Agnósticos e Não-Crentes</li>
 
-<li><strong>Capítulo 10:</strong> Pregação com Unção – O Poder do Espírito Santo e a Autoridade da Escritura</li>
+<li>Capítulo 10: Pregação com Unção</li>
 
-<li><strong>Capítulo 11:</strong> Erros Comuns na Pregação e Como Evitá-los</li>
+<li>Capítulo 11: Erros Comuns na Pregação</li>
 
-<li><strong>Capítulo 12:</strong> Pregação no Mundo Digital – Tecnologia, Atenção Curta e Cultura Contemporânea</li>
+<li>Capítulo 12: Pregação no Mundo Digital</li>
 
-<li><strong>Conclusão:</strong> Pregando para a Glória de Deus e a Alegria do Seu Povo</li>
+<li>Conclusão: Pregando para a Glória de Deus e a Alegria do Seu Povo</li>
 
 </ul>
 
@@ -260,41 +508,43 @@ Sumário Completo
 
 </section>
 
-<section class="section">
+<!-- DIFERENCIAIS -->
+
+<section>
 
 <div class="container">
 
 <h2 class="section-title">
-O que você aprenderá?
+Diferenciais do E-book
 </h2>
 
 <div class="cards">
 
 <div class="card">
-<h3>✓ Como construir sermões</h3>
+<h3>🏛 História da Homilética</h3>
 <p>
-Estruture mensagens bíblicas de forma lógica e poderosa.
+Da Igreja Primitiva aos grandes pregadores reformados.
 </p>
 </div>
 
 <div class="card">
-<h3>✓ Como interpretar textos</h3>
+<h3>📜 Base Bíblica</h3>
 <p>
-Métodos exegéticos para compreender o texto original.
+Foco em interpretação correta das Escrituras.
 </p>
 </div>
 
 <div class="card">
-<h3>✓ Como aplicar a Bíblia</h3>
+<h3>🧠 Modelos Consagrados</h3>
 <p>
-Transforme conhecimento bíblico em transformação prática.
+Haddon Robinson, Bryan Chapell e Timothy Keller.
 </p>
 </div>
 
 <div class="card">
-<h3>✓ Como comunicar melhor</h3>
+<h3>🌎 Pregação Contemporânea</h3>
 <p>
-Use técnicas modernas de comunicação sem comprometer a fidelidade bíblica.
+Como comunicar a verdade em uma cultura digital.
 </p>
 </div>
 
@@ -304,30 +554,72 @@ Use técnicas modernas de comunicação sem comprometer a fidelidade bíblica.
 
 </section>
 
-<section class="cta-final">
+<!-- FAQ -->
 
-<h2 style="font-size:3rem; margin-bottom:20px;">
-Comece Hoje Sua Formação Homilética
+<section>
+
+<div class="container">
+
+<h2 class="section-title">
+Perguntas Frequentes
 </h2>
 
-<p style="max-width:700px; margin:auto; color:#cbd5e1;">
-Baixe gratuitamente o Guia Completo de Homilética e aprenda a pregar a Palavra de Deus com profundidade, clareza e fidelidade bíblica.
+<div class="faq">
+
+<div class="faq-item">
+<h3>O e-book é gratuito?</h3>
+<p>Sim. O download é totalmente gratuito.</p>
+</div>
+
+<div class="faq-item">
+<h3>É indicado para iniciantes?</h3>
+<p>Sim. O material foi escrito para iniciantes e pregadores experientes.</p>
+</div>
+
+<div class="faq-item">
+<h3>Posso ler no celular?</h3>
+<p>Sim. O PDF pode ser lido em celular, tablet ou computador.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA FINAL -->
+
+<section class="final">
+
+<div class="container">
+
+<h2>
+Comece Sua Formação Homilética Hoje
+</h2>
+
+<p style="max-width:800px;margin:auto;color:#cbd5e1;">
+Aprenda a interpretar, estruturar e comunicar fielmente a Palavra de Deus.
 </p>
 
-<a href="ebook-homiletica.pdf" class="cta">
-📥 BAIXAR EBOOK GRATUITO
+<a
+href="E-BOOK Guia completo de homilética - a arte de pregar a palavra de Deus (3).pdf"
+download
+class="cta">
+📥 BAIXAR AGORA
 </a>
+
+</div>
 
 </section>
 
 <footer>
 
 <p>
-© 2026 • Guia Completo de Homilética
+✝️ Soli Deo Gloria
 </p>
 
 <p>
-Soli Deo Gloria ✝️
+Guia Completo de Homilética © 2026
 </p>
 
 </footer>
